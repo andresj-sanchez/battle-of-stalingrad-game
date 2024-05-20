@@ -10,7 +10,9 @@ class Player extends Model
 {
     use HasFactory, HasUuids;
 
-    public function scores()
+    protected $fillable = ['name'];
+
+    public function score()
     {
         return $this->hasMany(Score::class);
     }

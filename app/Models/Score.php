@@ -10,6 +10,8 @@ class Score extends Model
 {
     use HasFactory, HasUuids;
 
+    protected $fillable = ['score'];
+
     public function player()
     {
         return $this->belongsTo(Player::class);

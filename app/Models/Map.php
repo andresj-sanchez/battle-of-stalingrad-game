@@ -9,4 +9,10 @@ use Illuminate\Database\Eloquent\Model;
 class Map extends Model
 {
     use HasFactory, HasUuids;
+
+    protected $fillable = ['grid'];
+
+    protected $casts = [
+        'grid' => 'array',
+    ];
 }

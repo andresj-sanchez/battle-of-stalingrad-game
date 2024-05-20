@@ -9,4 +9,6 @@ use Illuminate\Database\Eloquent\Model;
 class Tank extends Model
 {
     use HasFactory, HasUuids;
+
+    protected $fillable = ['type', 'speed', 'turret_range', 'health_points'];
 }

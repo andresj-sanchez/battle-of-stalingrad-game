@@ -2,6 +2,12 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TankController;
+use App\Http\Controllers\MapController;
+use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ScoreController;
+use App\Http\Controllers\LeaderboardController;
+use App\Http\Controllers\SimulationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +20,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
+Route::prefix('v1')->group(function () {
+    Route::apiResources([
+        'tanks' => TankController::class,
+        'maps' => MapController::class,
+        'players' => PlayerController::class,
+        'scores' => ScoreController::class,
+    ], ['only' => ['index', 'show']]);
+
+    Route::get('leaderboards', [LeaderboardController::class, 'index']);
+    Route::post('simulate', [SimulationController::class, 'simulate']);
 });

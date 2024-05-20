@@ -12,7 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tanks', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->string('type');
+            $table->integer('speed');
+            $table->integer('turret_range');
+            $table->integer('health_points');
             $table->timestamps();
         });
     }

@@ -12,7 +12,7 @@ class MapController extends Controller
      */
     public function index()
     {
-        //
+        return Map::all();
     }
 
     /**
@@ -28,7 +28,7 @@ class MapController extends Controller
      */
     public function show(Map $map)
     {
-        //
+        return $map;
     }
 
     /**

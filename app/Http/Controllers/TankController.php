@@ -12,7 +12,7 @@ class TankController extends Controller
      */
     public function index()
     {
-        //
+        return Tank::all();
     }
 
     /**
@@ -28,7 +28,7 @@ class TankController extends Controller
      */
     public function show(Tank $tank)
     {
-        //
+        return $tank;
     }
 
     /**

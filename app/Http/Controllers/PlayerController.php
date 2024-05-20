@@ -12,7 +12,7 @@ class PlayerController extends Controller
      */
     public function index()
     {
-        //
+        return Player::all();
     }
 
     /**
@@ -28,7 +28,7 @@ class PlayerController extends Controller
      */
     public function show(Player $player)
     {
-        //
+        return $player;
     }
 
     /**

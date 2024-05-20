@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class LeaderboardController extends Controller
 {
@@ -11,7 +12,13 @@ class LeaderboardController extends Controller
      */
     public function index()
     {
-        //
+        $leaderboard = DB::table('scores')
+            ->select('player_id', 'score')
+            ->orderBy('score', 'desc')
+            ->take(5)
+            ->get();
+
+        return response()->json(['global_leaderboard' => $leaderboard]);
     }
 
     /**

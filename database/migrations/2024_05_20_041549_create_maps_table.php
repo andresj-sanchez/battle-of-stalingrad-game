@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('maps', function (Blueprint $table) {
-            $table->id();
+            $table->uuid('id')->primary();
+            $table->json('grid'); // Assuming the map grid is stored as JSON
             $table->timestamps();
         });
     }

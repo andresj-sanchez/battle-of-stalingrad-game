@@ -10,6 +10,13 @@ services:
       - .:/var/www
     networks:
       - laravel
+    # ports:
+    #   - 8080:8080
+    depends_on:
+      couchbase:
+        condition: service_healthy
+      redis:
+        condition: service_started
 
   web:
     image: nginx:alpine
@@ -32,8 +39,24 @@ services:
     ports:
       - "8091-8096:8091-8096"
       - "11210-11211:11210-11211"
+    expose: # expose ports 8091 & 8094 to other containers (mainly for backend)
+      - "8091"
+      - "8094"
     networks:
       - laravel
+    environment:
+      - COUCHBASE_HOST
+      - COUCHBASE_CLUSTER
+      - COUCHBASE_ADMINISTRATOR_USERNAME
+      - COUCHBASE_ADMINISTRATOR_PASSWORD
+      - COUCHBASE_BUCKET
+      - COUCHBASE_USERNAME
+      - COUCHBASE_PASSWORD
+    healthcheck: # checks couchbase server is up
+      test: ["CMD", "curl", "-v", "http://localhost:8091/pools"]
+      interval: 5s
+      timeout: 20s
+      retries: 90
 
   redis:
     image: redis:alpine

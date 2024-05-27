@@ -10,6 +10,9 @@ services:
       - .:/var/www
     networks:
       - laravel
+    depends_on:
+      - couchbase
+      - redis
 
   web:
     image: nginx:alpine
@@ -34,6 +37,13 @@ services:
       - "11210-11211:11210-11211"
     networks:
       - laravel
+    environment:
+      - COUCHBASE_CLUSTER
+      - COUCHBASE_ADMINISTRATOR_USERNAME
+      - COUCHBASE_ADMINISTRATOR_PASSWORD
+      - COUCHBASE_BUCKET
+      - COUCHBASE_USERNAME
+      - COUCHBASE_PASSWORD
 
   redis:
     image: redis:alpine

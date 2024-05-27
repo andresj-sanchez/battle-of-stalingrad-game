@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\CouchbaseController;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class LeaderboardController extends CouchbaseController
 {
@@ -25,9 +25,10 @@ class LeaderboardController extends CouchbaseController
             return $results; // Return the error response
         }
 
-        $leaderboards = ['global_leaderboards' => $results->getData()];
+        $leaderboards = $results->getData();
 
-        return response()->json($leaderboards);
+        // return response()->json($leaderboards);
+        return view('leaderboard', compact('leaderboards'));
     }
 
     /**

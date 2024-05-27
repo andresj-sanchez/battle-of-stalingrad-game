@@ -28,6 +28,6 @@ Route::prefix('v1')->group(function () {
         'scores' => ScoreController::class,
     ], ['only' => ['index', 'show']]);
 
-    Route::get('leaderboards', [LeaderboardController::class, 'index']);
+    Route::get('leaderboard', [LeaderboardController::class, 'index']);
     Route::post('simulate', [SimulationController::class, 'simulate']);
 });

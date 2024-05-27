@@ -2,17 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Map;
 use Illuminate\Http\Request;
 
-class MapController extends Controller
+class MapController extends CouchbaseController
 {
+
+    public function getCollectionName()
+    {
+        return 'maps';
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Map::all();
+        return $this->getAllDocuments($this->getCollectionName());
     }
 
     /**
@@ -26,15 +31,15 @@ class MapController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Map $map)
+    public function show($id)
     {
-        return $map;
+        return $this->getDocumentById($this->getCollectionName(), $id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Map $map)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -42,7 +47,7 @@ class MapController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Map $map)
+    public function destroy($id)
     {
         //
     }

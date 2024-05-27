@@ -1,74 +1,41 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Game\Services\GameService;
+use App\Http\Controllers\CouchbaseController;
 use Illuminate\Support\Facades\Validator;
 
 class SimulationController extends CouchbaseController
 {
-    
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, string $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
-    }
-
     /**
      * Simulates a battle between two tanks on a given map and returns the winner and score.
      */
     public function simulate(Request $request)
     {
-        // Define validation rules
-        $rules = [
+        
+        $request->validate([
             'tanks' => 'required|array|size:2',
-            'tanks.*' => 'uuid',
+            'tanks.*' => 'uuid|distinct',
             'map_id' => 'required|uuid',
-        ];
+        ]);
 
-        // Create a validator instance and validate the request
-        $validator = Validator::make($request->all(), $rules);
+        // // Define validation rules
+        // $rules = [
+        //     'tanks' => 'required|array|size:2',
+        //     'tanks.*' => 'uuid',
+        //     'map_id' => 'required|uuid',
+        // ];
 
-        // Check if the validation fails
-        if ($validator->fails()) {
-            return response()->json(['errors' => $validator->errors()], 400);
-        }
+        // // Create a validator instance and validate the request
+        // $validator = Validator::make($request->all(), $rules);
+
+        // // Check if the validation fails
+        // if ($validator->fails()) {
+        //     return response()->json(['errors' => $validator->errors()], 400);
+        // }
 
         $tank1Response = $this->getDocumentById($this->getTankCollectionName(), $request->tanks[0]);
         $tank2Response = $this->getDocumentById($this->getTankCollectionName(), $request->tanks[1]);
@@ -151,7 +118,8 @@ class SimulationController extends CouchbaseController
 
         $gameSessionArray['id'] = $responseData['documentId'];
 
-        return response()->json($gameSessionArray);
+        // return response()->json($gameSessionArray);
+        return view('simulation', compact('gameSessionArray', 'mapData'));
     }
 
     public function getTankCollectionName()

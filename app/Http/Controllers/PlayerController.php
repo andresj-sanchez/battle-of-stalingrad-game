@@ -2,17 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Player;
 use Illuminate\Http\Request;
 
-class PlayerController extends Controller
+class PlayerController extends CouchbaseController
 {
+    public function getCollectionName()
+    {
+        return 'players';
+    }
+
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return Player::all();
+        return $this->getAllDocuments($this->getCollectionName());
     }
 
     /**
@@ -26,15 +30,15 @@ class PlayerController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Player $player)
+    public function show($id)
     {
-        return $player;
+        return $this->getDocumentById($this->getCollectionName(), $id);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Player $player)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -42,7 +46,7 @@ class PlayerController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Player $player)
+    public function destroy($id)
     {
         //
     }

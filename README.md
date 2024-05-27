@@ -40,4 +40,8 @@ Open your web browser and navigate to http://localhost:8091/ui/index.html to acc
 
 6. **Access the application:**
 
-Open your web browser and navigate to http://localhost:8080 to access the application. 
+Open your web browser and navigate to http://localhost:8080 to access the application.
+
+7. **Access the API documentation:**
+
+Open your web browser and navigate to http://localhost:8080/swagger/docs to access the API documentation.

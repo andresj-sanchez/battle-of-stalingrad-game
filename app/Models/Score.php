@@ -4,10 +4,10 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
-use Illuminate\Database\Eloquent\Model;
+use FriendsOfCat\Couchbase\Eloquent\Model as CouchbaseModel;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Score extends Model
+class Score extends CouchbaseModel
 {
     use HasFactory, HasUuids;
 

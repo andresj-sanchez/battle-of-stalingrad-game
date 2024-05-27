@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Web\LeaderboardController;
+use App\Http\Controllers\Web\SimulationController;
+use App\Http\Controllers\Web\SelectionMenuController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +17,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
+})->name('home');
+
+Route::get('/swagger/docs', function () {
+    return view('swagger.index');
 });
+
+Route::get('leaderboard', [LeaderboardController::class, 'index'])->name('leaderboard');
+Route::get('selection-menu', [SelectionMenuController::class, 'index'])->name('selection-menu');
+Route::post('simulate', [SimulationController::class, 'simulate'])->name('simulate');

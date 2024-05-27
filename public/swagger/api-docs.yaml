@@ -9,7 +9,7 @@ info:
     
     Some useful links:
     - [The Battle of Stalingrad Game repository](https://github.com/swagger-api/swagger-petstore)
-    - [The source API definition for the Battle of Stalingrad Game](https://github.com/swagger-api/swagger-petstore/blob/master/src/main/resources/openapi.yaml)
+    - [The source API definition for the Battle of Stalingrad Game](https://github.com/andresj-sanchez/battle-of-stalingrad-game/blob/main/public/swagger/api-docs.yaml)
   contact:
     email: contacttowork.andres@gmail.com
   version: 1.0.0

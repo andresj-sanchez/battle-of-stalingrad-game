@@ -1,6 +1,6 @@
-# Tank Battle Simulation
+# Battle Of Stalingrad Simulation
 
-Welcome to Tank Battle Simulation, a turn-based strategy game where you engage in thrilling tank combat! This project is part of a take-home test and showcases a PHP backend built with Laravel and a JavaScript frontend.
+Welcome to Battle Of Stalingrad Simulation, a turn-based strategy game where you engage in thrilling tank combat! This project is part of a take-home test and showcases a PHP backend built with Laravel and a JavaScript frontend.
 
 ## Features
 
@@ -16,7 +16,7 @@ To set up the project using Docker, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/tank-battle-simulation.git
+   git clone https://github.com/andresj-sanchez/battle-of-stalingrad-game.git
 
 2. **Navigate to the project directory:**
 

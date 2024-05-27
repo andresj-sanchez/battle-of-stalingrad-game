@@ -7,7 +7,6 @@ Welcome to Battle Of Stalingrad Simulation, a turn-based strategy game where you
 - Engage in turn-based tank combat.
 - Explore dynamic maps with obstacles and open spaces.
 - Battle against AI or other players.
-- Customize tanks with different abilities and stats.
 
 ## Installation
 

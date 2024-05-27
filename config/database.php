@@ -93,6 +93,15 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+        'couchbase' => [
+            'driver'   => 'couchbase',
+            'host'     => env('DB_CONNECTION', 'couchbase'),
+            'port' => '',
+            'bucket'   => env('COUCHBASE_BUCKET', 'battleofstalingrad'),
+            'username' => env('COUCHBASE_USERNAME', 'admin'),
+            'password' => env('COUCHBASE_PASSWORD', 'secret1234'),
+        ],
+
     ],
 
     /*

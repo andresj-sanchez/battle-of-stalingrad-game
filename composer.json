@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+        "blackscorp/astar": "^1.2",
+        "couchbase/couchbase": "^4.1",
         "friendsofcat/laravel-couchbase": "^1.1",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",

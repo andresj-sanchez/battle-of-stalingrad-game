@@ -4,8 +4,45 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "733d4beca9a00b60c8a022eb51ce54a7",
+    "content-hash": "265d067dd912b4caff769750c2a8836f",
     "packages": [
+        {
+            "name": "blackscorp/astar",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/BlackScorp/astar.git",
+                "reference": "9b80d6135ac31947d246cf2e33ff45d4681a6a57"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/BlackScorp/astar/zipball/9b80d6135ac31947d246cf2e33ff45d4681a6a57",
+                "reference": "9b80d6135ac31947d246cf2e33ff45d4681a6a57",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "BlackScorp\\Astar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Vitalij Mik",
+                    "email": "cccpmik+composer@gmail.com"
+                }
+            ],
+            "description": "AStar path finding implementation in php",
+            "support": {
+                "issues": "https://github.com/BlackScorp/astar/issues",
+                "source": "https://github.com/BlackScorp/astar/tree/v1.2.0"
+            },
+            "time": "2017-10-06T15:21:22+00:00"
+        },
         {
             "name": "brick/math",
             "version": "0.12.1",
@@ -134,6 +171,58 @@
                 }
             ],
             "time": "2023-12-11T17:09:12+00:00"
+        },
+        {
+            "name": "couchbase/couchbase",
+            "version": "4.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/couchbase/couchbase-php-client.git",
+                "reference": "321e898b6a9e3bdabfc176d72940eb1a6ab47912"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/couchbase/couchbase-php-client/zipball/321e898b6a9e3bdabfc176d72940eb1a6ab47912",
+                "reference": "321e898b6a9e3bdabfc176d72940eb1a6ab47912",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "require-dev": {
+                "ext-sockets": "*",
+                "phpunit/phpunit": "^9"
+            },
+            "suggest": {
+                "ext-grpc": "^1.15",
+                "ext-protobuf": "^3.21",
+                "google/common-protos": "^3.1",
+                "google/protobuf": "^3.21",
+                "grpc/grpc": "^1.42"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Couchbase\\": "Couchbase/",
+                    "GPBMetadata\\Couchbase\\": "GPBMetadata/Couchbase",
+                    "Couchbase\\Protostellar\\": "Couchbase/Protostellar"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Sergey Avseyev",
+                    "email": "sergey.avseyev@gmail.com"
+                }
+            ],
+            "description": "The PHP client library provides fast access to documents stored in a Couchbase Server.",
+            "support": {
+                "source": "https://github.com/couchbase/couchbase-php-client/tree/4.2.1"
+            },
+            "time": "2024-04-23T18:00:43+00:00"
         },
         {
             "name": "dflydev/dot-access-data",

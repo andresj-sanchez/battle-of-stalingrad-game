@@ -46,6 +46,8 @@ COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 COPY entrypoint.sh /entrypoint.sh
 
+RUN chmod +x /entrypoint.sh
+
 # Set permissions
 RUN chown -R www-data:www-data /var/www
 
